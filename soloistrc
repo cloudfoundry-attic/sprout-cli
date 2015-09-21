@@ -36,7 +36,6 @@ recipes:
 - capi::concourse_cli
 - capi::vim_luan
 - sprout-chruby
-- capi::fast_bosh
 - capi::spiff
 - cli
 
@@ -59,7 +58,7 @@ node_attributes:
       projects:
         - url: https://github.com/cloudfoundry/cli
         - url: https://github.com/cloudfoundry/cli-concourse-ci
-        - url: https://github.com/squeedee/sprout-cf-cli
+        - url: https://github.com/cloudfoundry-incubator/sprout-cli
     terminal:
       default_profile: 'Pro'
     settings:
