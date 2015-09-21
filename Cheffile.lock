@@ -7,6 +7,18 @@ SITE
       build-essential (>= 2.1.2)
 
 GIT
+  remote: https://github.com/cloudfoundry-incubator/sprout-capi
+  path: capi
+  ref: master
+  sha: 5f4945750ad7d8b9f55362f4a6b341fd88d4921b
+  specs:
+    sprout-capi (0.1.0)
+      sprout-base (>= 0.0.0)
+      sprout-chruby (>= 0.0.0)
+      sprout-git (>= 0.0.0)
+      sprout-homebrew (>= 0.0.0)
+
+GIT
   remote: https://github.com/pivotal-sprout/osx
   ref: master
   sha: 70ef029c8b25dbab5be2fb328b987297c05936db
@@ -57,15 +69,6 @@ GIT
       sprout-homebrew (>= 0.0.0)
 
 GIT
-  remote: https://github.com/pivotal-sprout/sprout-mysql
-  ref: master
-  sha: 7501fffff8a5c6e9237b295ab586595eeb2bb06e
-  specs:
-    sprout-mysql (0.1.0)
-      homebrew (>= 0.0.0)
-      sprout-base (>= 0.0.0)
-
-GIT
   remote: https://github.com/pivotal-sprout/sprout-osx-apps
   ref: master
   sha: 92996213da21ede0c1ad7a7de498950db621bd93
@@ -87,15 +90,6 @@ GIT
       sprout-base (>= 0.0.0)
 
 GIT
-  remote: https://github.com/pivotal-sprout/sprout-postgresql
-  ref: master
-  sha: 4dda423c52414507123d084d3acee07f36d7ae94
-  specs:
-    sprout-postgresql (0.1.0)
-      homebrew (>= 1.5.4)
-      sprout-base (>= 0.0.0)
-
-GIT
   remote: https://github.com/pivotal-sprout/sprout-ruby
   ref: master
   sha: d6430744f515a2acce32580c03ba27e1fe0dea2e
@@ -113,27 +107,22 @@ GIT
       sprout-osx-settings (>= 0.0.0)
 
 PATH
-  remote: capi
+  remote: cli
   specs:
-    capi (0.1.0)
-      sprout-base (>= 0.0.0)
-      sprout-chruby (>= 0.0.0)
-      sprout-git (>= 0.0.0)
-      sprout-homebrew (>= 0.0.0)
+    cli (0.0.1)
 
 DEPENDENCIES
-  capi (>= 0)
+  cli (>= 0)
   homebrew (>= 0)
   osx (>= 0)
   sprout-base (>= 0)
+  sprout-capi (>= 0)
   sprout-chruby (>= 0)
   sprout-git (>= 0)
   sprout-homebrew (>= 0)
   sprout-jetbrains-editors (>= 0)
-  sprout-mysql (>= 0)
   sprout-osx-apps (>= 0)
   sprout-osx-settings (>= 0)
-  sprout-postgresql (>= 0)
   sprout-ruby (>= 0)
   sprout-ssh (>= 0)
 

@@ -26,11 +26,6 @@ recipes:
 - sprout-git::git_duet
 - sprout-git::projects
 
-# development (rails)
-- sprout-ruby
-- sprout-mysql
-- sprout-postgresql
-
 # apps (editors)
 - sprout-jetbrains-editors::intellij_ce
 

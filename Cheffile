@@ -35,6 +35,7 @@ cookbook 'sprout-jetbrains-editors',
 cookbook 'homebrew'
 
 cookbook 'sprout-capi',
-  :github => 'cloudfoundry-incubator/sprout-capi'
+  :github => 'cloudfoundry-incubator/sprout-capi',
+  :path => 'capi'
 
 cookbook 'cli', path: 'cli'
