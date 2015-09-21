@@ -1,0 +1,151 @@
+recipes:
+
+# base (required by sprout)
+- sprout-base
+- sprout-base::bash_it
+- sprout-base::homebrew
+- homebrew::install_taps
+- sprout-homebrew
+
+# apps
+- sprout-osx-apps::iterm2
+- sprout-osx-apps::shiftit
+- sprout-osx-apps::go
+
+
+# settings
+- sprout-osx-settings
+- sprout-osx-settings::dock_preferences
+- sprout-ssh::known_hosts_github
+
+
+# development (general)
+- sprout-base::workspace_directory
+- sprout-git
+- sprout-git::default_editor
+- sprout-git::git_duet
+- sprout-git::projects
+
+# development (rails)
+- sprout-ruby
+- sprout-mysql
+- sprout-postgresql
+
+# apps (editors)
+- sprout-jetbrains-editors::intellij_ce
+
+# Extras
+- sprout-osx-settings::ntp
+- sprout-osx-apps::vagrant_plugins
+
+- capi::concourse_cli
+- capi::vim_luan
+- sprout-chruby
+- capi::fast_bosh
+- capi::spiff
+- cli
+
+node_attributes:
+  sprout:
+    git:
+      domain: no-default
+      aliases:
+        - ci duet-commit
+      global_config:
+        'url."git@github.com:".pushInsteadOf': 'https://github.com/'
+      authors:
+        - initials: sl
+          name: Simon Leung
+          email: contact@simonleung.info
+        - initials: ra
+          name: Rasheed Abdul-Aziz
+          email: squeedee@gmail.com
+        - initials: ab
+          name: Andrew Bruce
+          email: me@andrewbruce.net
+      projects:
+        - url: https://github.com/cloudfoundry/cli
+        - url: https://github.com/cloudfoundry/cli-concourse-ci
+        - url: https://github.com/cloudfoundry/cli-ci
+        - url: https://github.com/squeedee/sprout-cf-cli
+    terminal:
+      default_profile: 'Pro'
+    settings:
+      clock_format: EEE MMM d  h:mm:ss a
+    dock_preferences:
+      orientation: 'bottom'
+      auto_hide: true
+      clear_apps: true
+      tile_size: 35
+      magnification: false
+    homebrew:
+      formulae:
+        - ack
+        - awscli
+        - direnv
+        - fasd
+        - name: fzf
+          head: true
+        - jq
+        - node
+        - pstree
+        - qt
+        - s3cmd
+        - ssh-copy-id
+        - tig
+        - the_silver_searcher
+        - tmux
+        - tree
+        - name: universal-ctags
+          head: true
+        - watch
+        - wget
+      casks:
+        - flycut
+        - gitx-rowanj
+        - github
+        - google-chrome
+        - iterm2-nightly
+        - java
+        - macvim
+        - menumeters
+        - mou
+        - sequel-pro
+        - sourcetree
+        - spectacle
+        - vagrant
+        - virtualbox
+        - xscope
+    chruby:
+      default_ruby: '2.2.3'
+      rubies:
+        ruby:
+          - '2.1.7'
+          - '2.2.3'
+
+  versions:
+    bash_it: HEAD
+
+  bash_it:
+    enabled_plugins:
+      aliases:
+        - general
+        - bundler
+        - git
+      completion:
+        - defaults
+        - git
+        - ssh
+      plugins:
+        - ssh
+        - git
+        - fzf
+        - fasd
+  homebrew:
+    taps:
+      - pivotal/tap
+      - caskroom/versions
+      - universal-ctags/universal-ctags
+  keyboard_preferences:
+    key_repeat_rate_lower_is_faster: 2
+    initial_repeat_delay_lower_is_shorter: 15

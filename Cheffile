@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+site 'https://supermarket.getchef.com/api/v1'
+
+cookbook 'sprout-chruby',
+  :github => 'pivotal-sprout/sprout-chruby'
+
+cookbook 'sprout-ruby',
+  :github => 'pivotal-sprout/sprout-ruby'
+
+cookbook 'sprout-git',
+  :github => 'pivotal-sprout/sprout-git'
+
+cookbook 'sprout-base',
+  :github => 'pivotal-sprout/sprout-base'
+
+cookbook 'sprout-osx-apps',
+  :github => 'pivotal-sprout/sprout-osx-apps'
+
+cookbook 'sprout-osx-settings',
+  :github => 'pivotal-sprout/sprout-osx-settings'
+
+cookbook 'osx',
+  :github => 'pivotal-sprout/osx'
+
+cookbook 'sprout-homebrew',
+  :github => 'pivotal-sprout/sprout-homebrew'
+
+cookbook 'sprout-ssh',
+  :github => 'pivotal-sprout/sprout-ssh'
+
+cookbook 'sprout-jetbrains-editors',
+  :github => 'pivotal-sprout/sprout-jetbrains-editors'
+
+cookbook 'homebrew'
+
+cookbook 'sprout-capi',
+  :github => 'cloudfoundry-incubator/sprout-capi'
+
+cookbook 'cli', path: 'cli'
