@@ -46,8 +46,6 @@ node_attributes:
       domain: no-default
       aliases:
         - ci duet-commit
-      global_config:
-        'url."git@github.com:".pushInsteadOf': 'https://github.com/'
       authors:
         - initials: sl
           name: Simon Leung
@@ -61,7 +59,6 @@ node_attributes:
       projects:
         - url: https://github.com/cloudfoundry/cli
         - url: https://github.com/cloudfoundry/cli-concourse-ci
-        - url: https://github.com/cloudfoundry/cli-ci
         - url: https://github.com/squeedee/sprout-cf-cli
     terminal:
       default_profile: 'Pro'
