@@ -43,7 +43,13 @@ then try downgrading those errors like this:
 
 ### 4. Run soloist
 
-[The `caffeinate` command will keep your computer awake while installing; depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.]
+The build runs long. We reccomend you allow all to sudo, at least while running:
+
+```shell
+sudo perl -pi -e 's/%admin\tALL=\(ALL\) ALL/%admin\tALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+```
+
+The `caffeinate` command will keep your computer awake while installing; depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.
 
     caffeinate bundle exec soloist
 
