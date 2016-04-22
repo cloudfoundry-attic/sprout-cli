@@ -25,7 +25,6 @@ recipes:
 
 # Extras
 - sprout-osx-settings::ntp
-- sprout-osx-apps::vagrant_plugins
 
 # CLI custom recipes
 - cli
