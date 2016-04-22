@@ -7,12 +7,6 @@ recipes:
 - homebrew::install_taps
 - sprout-homebrew
 
-# apps
-- sprout-osx-apps::iterm2
-- sprout-osx-apps::shiftit
-- sprout-osx-apps::go
-
-
 # settings
 - sprout-osx-settings
 - sprout-osx-settings::dock_preferences
@@ -35,30 +29,35 @@ recipes:
 
 - capi::concourse_cli
 - capi::vim_luan
-- sprout-chruby
 - capi::spiff
 - cli
 
 node_attributes:
   sprout:
     git:
-      domain: no-default
+      domain: pivotal.io
       aliases:
         - ci duet-commit
       authors:
-        - initials: sl
-          name: Simon Leung
-          email: contact@simonleung.info
-        - initials: ra
-          name: Rasheed Abdul-Aziz
-          email: squeedee@gmail.com
-        - initials: ab
-          name: Andrew Bruce
-          email: me@andrewbruce.net
+        - initials: ag
+          name: Anand Gaitonde
+          username: agaitonde
+        - initials: ch
+          name: Chris Hendrix
+          username: chendrix
+        - initials: cjh
+          name: Corbin Halliwill
+          username: challiwill
+        - initials: jp
+          name: Jeff Pak
+          email: jeffrey.pak@emc.com
       projects:
-        - url: https://github.com/cloudfoundry/cli
-        - url: https://github.com/cloudfoundry/cli-concourse-ci
+        - url: https://github.com/cloudfoundry/bosh-lite
+        - url: https://github.com/cloudfoundry/cf-release
+        - url: https://github.com/cloudfoundry/cli-private
         - url: https://github.com/cloudfoundry-incubator/sprout-cli
+        - url: https://github.com/cloudfoundry-incubator/cf-routing-release
+        - url: https://github.com/cloudfoundry-incubator/diego-release
     terminal:
       default_profile: 'Pro'
     settings:
@@ -73,46 +72,37 @@ node_attributes:
       formulae:
         - ack
         - awscli
+        - bash-completion
+        - bzr
         - direnv
         - fasd
-        - name: fzf
-          head: true
+        - fzf
+        - git
+        - htop-osx
         - jq
-        - node
-        - pstree
-        - qt
-        - s3cmd
-        - ssh-copy-id
-        - tig
-        - the_silver_searcher
-        - tmux
-        - tree
         - name: universal-ctags
           head: true
+        - neovim
+        - node
+        - pstree
+        - ruby
+        - s3cmd
+        - ssh-copy-id
+        - the_silver_searcher
+        - tig
+        - tmux
+        - tree
         - watch
         - wget
       casks:
         - flycut
-        - gitx-rowanj
-        - github
         - google-chrome
         - iterm2-nightly
         - java
-        - macvim
-        - menumeters
-        - mou
-        - sequel-pro
+        - shiftit
         - sourcetree
-        - spectacle
         - vagrant
         - virtualbox
-        - xscope
-    chruby:
-      default_ruby: '2.2.3'
-      rubies:
-        ruby:
-          - '2.1.7'
-          - '2.2.3'
 
   versions:
     bash_it: HEAD
@@ -128,14 +118,28 @@ node_attributes:
         - git
         - ssh
       plugins:
-        - ssh
-        - git
-        - fzf
         - fasd
+        - fzf
+        - git
+        - git-subrepo
+        - osx
+        - ruby
+        - ssh
+    custom_plugins:
+      cli:
+        - bash_it/custom/aliases.bash
+        - bash_it/custom/paths.bash
+        - bash_it/custom/env.bash
+        - bash_it/custom/goto.bash
+      capi:
+        - bash_it/custom/setup-direnv.bash
+        - bash_it/custom/pullify.bash
+
   homebrew:
     taps:
-      - pivotal/tap
       - caskroom/versions
+      - neovim/neovim
+      - pivotal/tap
       - universal-ctags/universal-ctags
   keyboard_preferences:
     key_repeat_rate_lower_is_faster: 2

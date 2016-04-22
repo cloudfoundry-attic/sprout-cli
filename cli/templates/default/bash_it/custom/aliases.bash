@@ -1,0 +1,2 @@
+# nvim
+alias vim=nvim
