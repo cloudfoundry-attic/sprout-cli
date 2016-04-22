@@ -27,9 +27,7 @@ recipes:
 - sprout-osx-settings::ntp
 - sprout-osx-apps::vagrant_plugins
 
-- capi::concourse_cli
-- capi::vim_luan
-- capi::spiff
+# CLI custom recipes
 - cli
 
 node_attributes:
@@ -100,7 +98,6 @@ node_attributes:
         - iterm2-nightly
         - java
         - shiftit
-        - sourcetree
         - vagrant
         - virtualbox
 
@@ -131,7 +128,6 @@ node_attributes:
         - bash_it/custom/paths.bash
         - bash_it/custom/env.bash
         - bash_it/custom/goto.bash
-      capi:
         - bash_it/custom/setup-direnv.bash
         - bash_it/custom/pullify.bash
 
