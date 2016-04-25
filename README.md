@@ -1,23 +1,23 @@
+# WARNING: Deprecated in favor of `cli-workstation`
+This repo has been deprecated in favor of the [cli-workstation](https://github.com/cloudfoundry-incubator/cli-workstation) install/update script.
+
 # sprout-wrap
 
 [![Build Status](https://travis-ci.org/cloudfoundry-incubator/sprout-capi.png?branch=master)](https://travis-ci.org/cloudfoundry-incubator/sprout-capi)
 
-This project uses [soloist](https://github.com/mkocher/soloist) and [librarian-chef](https://github.com/applicationsonline/librarian-chef)
-to run a subset of the recipes in sprout's cookbooks.
+This project uses [soloist](https://github.com/mkocher/soloist) and [librarian-chef](https://github.com/applicationsonline/librarian-chef) to run a subset of the recipes in sprout's cookbooks.
 
-[Fork it](https://github.com/pivotal-sprout/sprout-wrap/fork) to 
-customize its [attributes](http://docs.chef.io/attributes.html) in [soloistrc](/soloistrc) and the list of recipes 
-you'd like to use for your team. You may also want to add other cookbooks to its [Cheffile](/Cheffile), perhaps one 
-of the many [community cookbooks](https://supermarket.chef.io/cookbooks). By default it configures an OS X 
-Mavericks workstation for Ruby development.
+[Fork it](https://github.com/pivotal-sprout/sprout-wrap/fork) to customize its [attributes](http://docs.chef.io/attributes.html) in [soloistrc](/soloistrc) and the list of recipes you'd like to use for your team. You may also want to add other cookbooks to its [Cheffile](/Cheffile), perhaps one of the many [community cookbooks](https://supermarket.chef.io/cookbooks). By default it configures an OS X Mavericks workstation for Ruby development.
 
-Finally, if you've never used Chef before - we highly recommend you buy &amp; watch [this excellent 17 minute screencast](http://railscasts.com/episodes/339-chef-solo-basics) by Ryan Bates. 
+Finally, if you've never used Chef before - we highly recommend you buy &amp; watch [this excellent 17 minute screencast](http://railscasts.com/episodes/339-chef-solo-basics) by Ryan Bates.
 
 ## Installation under Mavericks (OS X 10.9)
 
 ### 1. Install Command Line Tools
-  
-    xcode-select --install
+
+```
+xcode-select --install
+```
 
 If you receive a message about the update server being unavailable and are on Mavericks, then you already have the command line tools.
 
@@ -43,7 +43,7 @@ then try downgrading those errors like this:
 
 ### 4. Run soloist
 
-The build runs long. We reccomend you allow all to sudo, at least while running:
+The build runs long. We recommend you allow all to sudo, at least while running:
 
 ```shell
 sudo perl -pi -e 's/%admin\tALL=\(ALL\) ALL/%admin\tALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
